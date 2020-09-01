@@ -198,9 +198,29 @@ class AddressBook {
 					person.display();
 				}
 			}
-			else {
-				cout << "No record found" << endl;
+		}
+		else {
+			cout << "No record found" << endl;
+		}
+	}
+
+	void searchByCityOrState() {
+
+		string searchItem;
+
+		cout << "Enter the city or state you want to search" << endl;
+		cin >> searchItem;
+
+		if(personList.size() != 0) {
+			for(Person person : personList) {
+				if(searchItem == person.getCity() || searchItem == person.getState()) {
+
+					person.display();
+				}
 			}
+		}
+		else {
+			cout << "No record found" << endl;
 		}
 	}
 };
