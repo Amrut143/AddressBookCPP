@@ -114,6 +114,71 @@ class AddressBook {
 				}
 			}
 		}
-			displayDetails();
+	}
+
+	void sortByCity() {
+
+		for(int i = 0; i < personList.size() - 1; i++) {
+			for(int j = i + 1; j < personList.size(); j++) {
+				if(personList[i].getCity() > personList[j].getCity()) {
+					swap(personList[i], personList[j]);
+				}
+			}
+		}
+	}
+
+	 void sortByState() {
+
+		for(int i = 0; i < personList.size() - 1; i++) {
+			for(int j = i + 1; j < personList.size(); j++) {
+				if(personList[i].getState() > personList[j].getState()) {
+					swap(personList[i], personList[j]);
+				}
+			}
+		}
+	}
+
+	 void sortByZip() {
+
+		for(int i = 0; i < personList.size() - 1; i++) {
+			for(int j = i + 1; j < personList.size(); j++) {
+				if(personList[i].getZipCode() > personList[j].getZipCode()) {
+					swap(personList[i], personList[j]);
+				}
+			}
+		}
+	}
+
+	void sortBy() {
+
+		int option;
+
+		cout << "Enter your option \n1.SortByName \n2.SortByCity \n.3SortByState \n4.SortByZip" << endl;
+		cin >> option;
+
+		switch(option) {
+
+			case 1:
+				sortByName();
+				break;
+
+			case 2:
+				sortByCity();
+				break;
+
+			case 3:
+				sortByState();
+				break;
+
+			case 4:
+				sortByZip();
+				break;
+
+			default:
+				cout << "Invalid input!!!!!!" << endl;
+				break;
+		}
+
+		displayDetails();
 	}
 };
