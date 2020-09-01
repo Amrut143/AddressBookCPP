@@ -4,12 +4,12 @@ using namespace std;
 
 class AddressBook {
 
-	Person person;
+	Person* person;
 
 	public:
 	void addPerson(Person person) {
 
-		this -> person = person;
+		this -> person = new Person(person);
 	}
 
 	void editPerson() {
@@ -17,31 +17,38 @@ class AddressBook {
 		cout << "Enter address: " << endl;
 		string address;
 		cin >> address;
-		person.setAddress(address);
+		person -> setAddress(address);
 
 		cout << "Enter city: " << endl;
 		string city;
 		cin >> city;
-		person.setCity(city);
+		person -> setCity(city);
 
 		cout << "Enter state: " << endl;
 		string state;
 		cin >> state;
-		person.setState(state);
+		person -> setState(state);
 
 		cout << "Enter phonenumber: " << endl;
 		string phoneNumber;
 		cin >> phoneNumber;
-		person.setPhoneNumber(phoneNumber);
+		person -> setPhoneNumber(phoneNumber);
 
 		cout << "Enter zipcode: " << endl;
 		string zipCode;
 		cin >> zipCode;
-		person.setZipCode(zipCode);
+		person -> setZipCode(zipCode);
+	}
+
+	void deletePersonDetails() {
+
+		delete person;
+		cout << "Person details are successfully deleted" << endl;
 	}
 
 	void displayDetails() {
 
-		person.display();
+		person -> display();
 	}
+
 };

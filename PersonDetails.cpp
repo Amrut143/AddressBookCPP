@@ -95,5 +95,6 @@ class Person {
 				<< "\nSTATE: " << this -> state
 				<< "\nZIPCODE: " << this -> zipCode
 				<< "\nPHONENUMBER: " << this -> phoneNumber << endl;
-	}
+   }
+
 };
