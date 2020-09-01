@@ -153,7 +153,7 @@ class AddressBook {
 
 		int option;
 
-		cout << "Enter your option \n1.SortByName \n2.SortByCity \n.3SortByState \n4.SortByZip" << endl;
+		cout << "Enter your option \n1.SortByName \n2.SortByCity \n3.SortByState \n4.SortByZip" << endl;
 		cin >> option;
 
 		switch(option) {
@@ -180,5 +180,27 @@ class AddressBook {
 		}
 
 		displayDetails();
+	}
+
+	void searchByCityAndState() {
+
+		string city, state;
+
+		cout << "Enter the city you want to search" << endl;
+		cin >> city;
+		cout << "Enter the state you want to search" << endl;
+		cin >> state;
+
+		if(personList.size() != 0) {
+			for(Person person : personList) {
+				if(city == person.getCity() && state == person.getState()) {
+
+					person.display();
+				}
+			}
+			else {
+				cout << "No record found" << endl;
+			}
+		}
 	}
 };

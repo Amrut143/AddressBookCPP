@@ -52,7 +52,8 @@ void selectOptionForOperation() {
 
 	while(flag) {
 
-		cout << "Enter your option \n1.Add Person \n2.View Details \n3.Edit Person \n4.Delete Person \n5.Sort BY \n6.Exit" << endl;
+		cout << "Enter your option \n1.Add Person \n2.View Details \n3.Edit Person \n4.Delete Person "
+				<<"\n5.Sort BY \n6.SearchByCityAndState \n7.Exit" << endl;
 		cin >> option;
 
 		switch(option) {
@@ -78,6 +79,10 @@ void selectOptionForOperation() {
 				break;
 
 			case 6:
+				addressBook.searchByCityAndState();
+				break;
+
+			case 7:
 				flag = false;
 		}
 	}
