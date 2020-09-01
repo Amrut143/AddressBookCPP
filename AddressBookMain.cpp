@@ -45,7 +45,7 @@ void selectOptionForOperation() {
 
 	while(flag) {
 
-		cout << "Enter your option \n1.Add Person \n2.View Details \n3.Exit" << endl;
+		cout << "Enter your option \n1.Add Person \n2.View Details \n3.Edit Person \n4.Exit" << endl;
 		cin >> option;
 
 		switch(option) {
@@ -59,6 +59,10 @@ void selectOptionForOperation() {
 				break;
 
 			case 3:
+				addressBook.editPerson();
+				break;
+
+			case 4:
 				flag = false;
 		}
 	}
