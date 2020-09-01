@@ -91,4 +91,17 @@ class AddressBook {
 			person.display();
 		}
 	}
+
+	bool isPersonPresent(string firstName, string lastName) {
+
+		vector<Person>::iterator person;
+
+		for(person = personList.begin(); person != personList.end(); person++) {
+			if(person -> getFirstName() == firstName && person -> getLastName() == lastName) {
+
+				return true;
+			}
+		}
+		return false;
+	}
 };

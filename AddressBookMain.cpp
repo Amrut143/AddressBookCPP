@@ -10,12 +10,19 @@ void displayWelcomeMsg() {
 void addPersonToAddressBook(AddressBook &addressBook) {
 
 	string firstName, lastName, address, city, state, zipCode, phoneNumber;
+	bool duplicateEntry = false;
 
 	cout << "Enter person's first name" << endl;
 	cin >> firstName;
 
 	cout << "Enter person's last name" << endl;
 	cin >> lastName;
+	duplicateEntry = addressBook.isPersonPresent(firstName, lastName);
+
+	if(duplicateEntry == true) {
+		cout << "Person already exist" << endl;
+		return;
+	}
 
 	cout << "Enter person's address" << endl;
 	cin >> address;
