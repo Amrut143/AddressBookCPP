@@ -104,4 +104,16 @@ class AddressBook {
 		}
 		return false;
 	}
+
+	void sortByName() {
+
+		for(int i = 0; i < personList.size() - 1; i++) {
+			for(int j = i + 1; j < personList.size(); j++) {
+				if(personList[i].getFirstName() > personList[j].getFirstName()) {
+					swap(personList[i], personList[j]);
+				}
+			}
+		}
+			displayDetails();
+	}
 };

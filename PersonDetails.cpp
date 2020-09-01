@@ -87,6 +87,7 @@ class Person {
 
 	void display() {
 
+		cout << "********************" << endl;
 		cout << "ADDRESS BOOK DETAILS" << endl;
 		cout << "*********************" << endl;
 		cout << "NAME: " << this -> firstName << " " << this -> lastName
