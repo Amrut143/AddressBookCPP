@@ -39,9 +39,14 @@ void addPersonToAddressBook(AddressBook &addressBook) {
 	cout << "Enter person's phonenumber" << endl;
 	cin >> phoneNumber;
 
-	Person person(firstName, lastName, address, city, state, zipCode, phoneNumber);
+	Person person(firstName, lastName);
+		person.setAddress(address);
+		person.setCity(city);
+		person.setState(state);
+		person.setZipCode(zipCode);
+		person.setPhoneNumber(phoneNumber);
 
-	addressBook.addPerson(person);
+		addressBook.addPerson(person);
 }
 
 void selectOptionForOperation() {
@@ -52,7 +57,7 @@ void selectOptionForOperation() {
 
 	while(flag) {
 
-		cout << "Enter your option \n1.Add Person \n2.View Details \n3.Edit Person \n4.Delete Person "
+		cout << "\nEnter your option \n1.Add Person \n2.View Details \n3.Edit Person \n4.Delete Person "
 				<<"\n5.Sort BY \n6.Search By City And State \n7.Search By City Or State \n8.Exit" << endl;
 		cin >> option;
 
